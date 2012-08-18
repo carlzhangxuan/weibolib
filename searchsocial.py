@@ -5,12 +5,12 @@ import re
 import linecache
 import time
 
-APP_KEY = '3419072486' # app key
-APP_SECRET = '5f3a96a94ff0b9b3e5e54f310d606343' # app secret
-CALLBACK_URL = 'http://apps.weibo.com/zhangmukelusidina' # callback url
+APP_KEY = '' # your app key
+APP_SECRET = '' # your app secret
+CALLBACK_URL = '' # your callback url
 
-access_token = linecache.getline('oauthcode', 1).strip()
-expires_in= linecache.getline('oauthcode', 2).strip()
+access_token = linecache.getline('oauthcode', 1).strip() #some user's access token
+expires_in= linecache.getline('oauthcode', 2).strip() # some user's access timelimit
 
 
 client = APIClient(app_key=APP_KEY, app_secret=APP_SECRET, redirect_uri=CALLBACK_URL)
@@ -45,5 +45,5 @@ def searchtwsgraph(cid):
 
 if __name__ == '__main__':
 	
-	cid=3480029851960633
+	cid=3480029851960633 #any tweet'S mid
 	searchtwsgraph(cid)
